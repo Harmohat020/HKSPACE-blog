@@ -1,0 +1,15 @@
+@import '../variables';
+
+html, body {
+    margin: 0; 
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.top-right{
+    @include top-right();
+}
+
+.links > a {
+    @include links-a();
+}

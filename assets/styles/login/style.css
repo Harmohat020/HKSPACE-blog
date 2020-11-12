@@ -1,0 +1,126 @@
+/* Variables */
+/* The image used for auth background */
+/* The color for the text for the auth files */
+/* The backgroundcolor for the inputs for the auth files */
+/* Auth button color*/
+/* Auth button hover */
+/* Auth link href*/
+/* Body background*/
+/* Card background */
+/* Card text color */
+/* Functions */
+/* Placing items center of screen*/
+/* Placing tables center*/
+/* Top right box for links*/
+/* Top right links*/
+html, body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  background-image: url("../../img/bg.jpg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.alert {
+  position: absolute;
+  z-index: 2;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 10px 5px;
+}
+
+.alert-danger {
+  color: #CA3E47;
+  background-color: #414141;
+  border-color: #414141;
+  letter-spacing: 1px;
+}
+
+.alert-danger .close {
+  text-shadow: none;
+}
+
+form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 10px 5px;
+  display: none;
+}
+
+form label {
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+form input[type=text], form input[type=password] {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #525252;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
+form input[type=text]:focus, form input[type=password]:focus {
+  background: transparent;
+  color: #ffffff;
+  border-bottom: 2px solid cyan;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+form input[type=submit] {
+  width: 100%;
+  background-color: #636b6f;
+  border: 1px solid #636b6f;
+}
+
+form input[type=submit]:hover {
+  background: #747d81;
+  border: 1px solid #747d81;
+}
+
+form .register-link {
+  font-size: medium;
+  color: #636b6f;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+/*# sourceMappingURL=style.css.map */

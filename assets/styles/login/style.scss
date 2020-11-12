@@ -1,0 +1,90 @@
+@import '../variables';
+
+html, body {
+    margin: 0; 
+    height: 100vh; 
+    overflow: hidden;
+}
+
+body{
+    background-image:$auth-bg;
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.top-right{
+    @include top-right();
+}
+
+.links > a {
+    @include links-a();
+}
+
+.alert{
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 10px 5px;;
+}
+
+.alert-danger {
+    color: #CA3E47;
+    background-color: #414141;
+    border-color: #414141;
+    letter-spacing: 1px;
+
+    .close{
+        text-shadow:none;
+    }
+}
+
+
+form{
+    @include center();
+    display: none;
+
+    label{
+        color: $auth-text-color;
+       @include text-design();
+    }
+    input[type=text], input[type=password]{
+        background: $auth-input-bg;
+        color: $auth-text-color;
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid #525252;
+        @include text-design();
+        transition: width 2s;
+
+
+        &:focus{
+            background: $auth-input-bg;
+            color: $auth-text-color;
+            border-bottom: 2px solid cyan;
+            box-shadow: none;
+            transition:all 2s ease;
+        }
+    }
+    input[type=submit]{
+        width: 100%;
+        background-color: $auth-btn-bg;
+        border:$auth-btn-border;
+
+        &:hover{
+            background: $auth-btn-bg-hvr;
+            border:$auth-btn-border-hvr;
+        }
+    }
+
+
+    .register-link{
+        font-size: medium;
+        color:$auth-link-color;
+        @include text-design();
+    }
+}

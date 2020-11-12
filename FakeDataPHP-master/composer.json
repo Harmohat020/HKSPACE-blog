@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jzonta/faker-restaurant": "^1.0"
+    }
+}

@@ -1,0 +1,82 @@
+/* Variables */
+
+/* The image used for auth background */
+$auth-bg: url("../../img/bg.jpg"); 
+
+/* The color for the text for the auth files */
+$auth-text-color:#ffffff;
+
+/* The backgroundcolor for the inputs for the auth files */
+$auth-input-bg:transparent;
+
+/* Auth button color*/
+$auth-btn-bg:#636b6f;
+$auth-btn-border: 1px solid #636b6f;
+
+/* Auth button hover */
+$auth-btn-bg-hvr:#747d81;
+$auth-btn-border-hvr:1px solid #747d81;
+
+/* Auth link href*/
+$auth-link-color:#636b6f;
+
+/* Body background*/
+$body-bg:#333333;
+
+/* Card background */
+$card-bg:#434343;
+
+/* Card text color */
+$card-txt-color:#b5b5b5;
+
+$table-nav-bg:#495057;
+
+/* Functions */
+
+/* Placing items center of screen*/
+@mixin center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 10px 5px;
+}
+
+/* Placing tables center*/
+@mixin center_table{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 10px 5px;
+}
+
+/* Top right box for links*/
+@mixin top-right{
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+/* Top right links*/
+@mixin links-a{
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+@mixin text-design{
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+@mixin text-design-title{
+    letter-spacing: 1px;
+    font-weight: bold;
+}

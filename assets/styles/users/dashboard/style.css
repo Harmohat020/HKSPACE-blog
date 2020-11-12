@@ -1,0 +1,144 @@
+/* Variables */
+/* The image used for auth background */
+/* The color for the text for the auth files */
+/* The backgroundcolor for the inputs for the auth files */
+/* Auth button color*/
+/* Auth button hover */
+/* Auth link href*/
+/* Body background*/
+/* Card background */
+/* Card text color */
+/* Functions */
+/* Placing items center of screen*/
+/* Placing tables center*/
+/* Top right box for links*/
+/* Top right links*/
+body {
+  padding-top: 8em;
+  background: #333333;
+}
+
+textarea.form-control {
+  background: transparent;
+  color: #ffffff;
+  border-radius: 0;
+  border: 2px solid #525252;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+textarea.form-control:focus {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid cyan;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+textarea.form-control::-webkit-input-placeholder {
+  color: #6c757d;
+}
+
+textarea.form-control:-ms-input-placeholder {
+  color: #6c757d;
+}
+
+textarea.form-control::-ms-input-placeholder {
+  color: #6c757d;
+}
+
+textarea.form-control::placeholder {
+  color: #6c757d;
+}
+
+.card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: #434343;
+  color: #b5b5b5;
+  border-radius: 15px;
+  margin: 10px 5px;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card h5 {
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.card p {
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+.db-title {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+hr {
+  border-top: 1px solid #6c757d;
+}
+
+h2 {
+  color: white;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+small {
+  color: white;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+.alert {
+  z-index: 2;
+  margin: 10px 5px;
+}
+
+.alert-danger {
+  color: #CA3E47;
+  background-color: #414141;
+  border-color: #414141;
+  letter-spacing: 1px;
+}
+
+.alert-danger .close {
+  text-shadow: none;
+}
+
+.comment-wrapper .panel-body {
+  max-height: 650px;
+  overflow: auto;
+}
+
+.comment-wrapper .media-list .media img {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #e5e7e8;
+  border-radius: 50%;
+}
+
+.comment-wrapper .media-list .media {
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 25px;
+}
+
+.media-body {
+  margin-left: 10px;
+}
+
+.comments {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,97 @@
+/* Variables */
+/* The image used for auth background */
+/* The color for the text for the auth files */
+/* The backgroundcolor for the inputs for the auth files */
+/* Auth button color*/
+/* Auth button hover */
+/* Auth link href*/
+/* Body background*/
+/* Card background */
+/* Card text color */
+/* Functions */
+/* Placing items center of screen*/
+/* Placing tables center*/
+/* Top right box for links*/
+/* Top right links*/
+body {
+  padding-top: 8em;
+  background: #333333;
+}
+
+.overview-body {
+  padding-top: 12rem;
+}
+
+.card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: #434343;
+  color: #b5b5b5;
+  border-radius: 15px;
+  margin: 10px 5px;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card .container {
+  padding: 2px 16px;
+}
+
+.card .user-photo {
+  width: 80;
+  height: 80;
+  border-radius: 50%;
+}
+
+hr {
+  border-top: 1px solid #6c757d;
+}
+
+.create-title, .create-summary, .create-content {
+  background: transparent;
+  color: white;
+}
+
+.create-title:focus, .create-summary:focus, .create-content:focus {
+  background: transparent;
+  color: white;
+}
+
+h2 {
+  letter-spacing: 2px;
+  color: white;
+  font-weight: lighter;
+}
+
+.create-form label {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.create-form input[type=submit], .create-form .back-btn {
+  letter-spacing: 2px;
+}
+
+.table th {
+  letter-spacing: 2px;
+}
+
+.table td {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.box > .card {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 10px 5px;
+}
+/*# sourceMappingURL=style.css.map */

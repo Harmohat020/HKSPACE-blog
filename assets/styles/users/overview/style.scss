@@ -1,0 +1,34 @@
+@import '../../variables';
+
+body{
+    color:$card-txt-color;
+}
+
+.page-item.disabled .page-link{
+    background: $table-nav-bg;
+    border: $table-nav-bg;
+    color:white;
+}
+
+.page-item.active .page-link{
+    background:#6c757d;
+}
+
+input[type=search]{
+        background: $auth-input-bg;
+        color: $auth-text-color;
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid #525252;
+        @include text-design();
+        transition: width 2s;
+
+
+        &:focus{
+            background: $auth-input-bg;
+            color: $auth-text-color;
+            border-bottom: 2px solid cyan;
+            box-shadow: none;
+            transition:all 2s ease;
+        }
+    }

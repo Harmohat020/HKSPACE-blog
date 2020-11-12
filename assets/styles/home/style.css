@@ -1,0 +1,30 @@
+/* Variables */
+/* The image used for auth background */
+/* The color for the text for the auth files */
+/* The backgroundcolor for the inputs for the auth files */
+/* Functions */
+/* Placing items center of screen*/
+/* Top right box for links*/
+/* Top right links*/
+html, body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=style.css.map */

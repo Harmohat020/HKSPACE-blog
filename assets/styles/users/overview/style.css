@@ -1,0 +1,51 @@
+/* Variables */
+/* The image used for auth background */
+/* The color for the text for the auth files */
+/* The backgroundcolor for the inputs for the auth files */
+/* Auth button color*/
+/* Auth button hover */
+/* Auth link href*/
+/* Body background*/
+/* Card background */
+/* Card text color */
+/* Functions */
+/* Placing items center of screen*/
+/* Placing tables center*/
+/* Top right box for links*/
+/* Top right links*/
+body {
+  color: #b5b5b5;
+}
+
+.page-item.disabled .page-link {
+  background: #495057;
+  border: #495057;
+  color: white;
+}
+
+.page-item.active .page-link {
+  background: #6c757d;
+}
+
+input[type=search] {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #525252;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+}
+
+input[type=search]:focus {
+  background: transparent;
+  color: #ffffff;
+  border-bottom: 2px solid cyan;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+/*# sourceMappingURL=style.css.map */

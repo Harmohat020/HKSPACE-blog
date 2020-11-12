@@ -1,0 +1,118 @@
+@import '../variables';
+
+html, body {
+    margin: 0; 
+    height: 100vh; 
+    overflow: hidden;
+}
+
+body{
+    background-image:$auth-bg;
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.top-right{
+    @include top-right();
+}
+
+.links > a {
+    @include links-a();
+}
+
+.alert{
+    position: absolute;
+    z-index: 2;
+    top: 3%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 10px 5px;;
+}
+
+.alert-danger {
+    color: #CA3E47;
+    background-color: #414141;
+    border-color: #414141;
+    letter-spacing: 1px;
+
+    .close{
+        text-shadow:none;
+    }
+}
+
+
+form{
+    @include center();
+    display: none;
+    
+    label{
+        color: $auth-text-color;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+
+    #example-date-input{
+        @include text-design();
+    }
+
+    input[type=text], input[type=password], input[type=email], input[type=date]{
+        background: $auth-input-bg;
+        color: $auth-text-color;
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid #525252;
+        @include text-design();
+
+
+        &:focus{
+            background: $auth-input-bg;
+            color: $auth-text-color;
+            border-bottom: 2px solid cyan;
+            box-shadow: none;
+            transition:all 2s ease;
+
+        }
+    
+    }
+    input[type=submit]{
+        background-color: $auth-btn-bg;
+
+        border:$auth-btn-border;
+
+        &:hover{
+            background: $auth-btn-bg-hvr;
+            border:$auth-btn-border-hvr;
+        }
+    }
+    
+    .form-btm-btn{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .login-link{
+        font-size: medium;
+        color:$auth-link-color;
+        @include text-design();
+    }
+}
+
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+@media only screen and (max-width: 767px) {
+    form{
+        padding-top: 5rem;
+    }
+    html,body{
+        overflow: scroll;
+    }
+    body{
+        background-size:250vh;
+    }
+  }

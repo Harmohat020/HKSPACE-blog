@@ -71,11 +71,15 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
                             <div class="comment-wrapper">
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
-                                        <?php echo $form_err;?>
+                                        <?php 
+                                        if (isset($form_err)) {
+                                            echo $form_err;                                      
+                                        }
+                                        ?>
                                     </div>
                                     <div class="panel-body">
                                         <form action="" method="post">
-                                            <textarea class="form-control" name="input-comment" placeholder="write a comment..." rows="3" required></textarea>
+                                            <textarea class="form-control" id="mytextarea" name="input-comment" placeholder="write a comment..." rows="3" required></textarea>
                                             <input type="hidden" name="form_post_id" value="<?php echo $post['id'];?>">
                                             <br>
                                             <input type="submit" name="form-comment" class="btn btn-info pull-right" value="Post">
@@ -84,7 +88,7 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
                                         <hr>
                                         <?php 
                                             for ($i=0; $i < count($comments->comments); $i++):
-                                                if ($comments->comments[$i]['post_id'] == $post['id']):         
+                                                if ($comments->comments[$i]['post_id'] == $post['id']):
                                         ?>
                                         <ul class="media-list">
                                             <li class="media">
@@ -102,8 +106,8 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
                                                 </div>
                                             </li>
                                         </ul>
-                                       <?php endif;?>
-                                      <?php endfor;?>
+                                                <?php endif;?>
+                                            <?php endfor;?>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +116,7 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
                 </div>
             </div>
             <br>
-          <?php endif;?>
+                <?php endif;?>
         <?php endforeach;?>
         <div id="prices"></div>
     </main>
@@ -124,7 +128,7 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
             $(this).siblings('.comments').toggle('slow');
         })
     })
-    //slideToggle('slow')
+  
     </script>
 </body>
 </html>

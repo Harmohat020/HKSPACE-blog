@@ -98,8 +98,8 @@ class DB{
             ]);
 
             $row = $query->fetch(PDO::FETCH_ASSOC);
-
-            if (count($row) > 0) {
+            // print '<pre>'.print_r($row, true).'</pre>';
+            if ($row > 0) {
                 $verify = password_verify($password, $row['password']);
 
                 if ($verify) {
@@ -296,7 +296,7 @@ class DB{
 
     public function show_comments(){
         try {
-            $sql = "SELECT * FROM comments INNER JOIN users ON user_id = users.id;";
+            $sql = "SELECT comment, comments.created_at AS created_at, username, profile_photo, post_id FROM comments INNER JOIN users ON user_id = users.id;";
 
             $query = $this->pdo->prepare($sql);
 

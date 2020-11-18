@@ -261,6 +261,9 @@ class DB{
 
             /* Commit the changes */
             $this->pdo->commit();
+
+            header("Refresh:0");
+
         }
         catch (PDOException $e) {
             /* Recognize mistake and roll back changes */
@@ -284,6 +287,8 @@ class DB{
 
             if (count($rows) > 0) {
                return $this->rows = $rows;
+            }else{
+               return $this->rows =  ['error' => $this->err_msg_auth('No <b>Data</b> available')];
             }
 
         } 
@@ -297,7 +302,8 @@ class DB{
 
     public function show_comments(){
         try {
-            $sql = "SELECT comment, comments.created_at AS created_at, username, profile_photo, post_id FROM comments INNER JOIN users ON user_id = users.id;";
+            $sql = "SELECT comment, comments.created_at AS created_at, username, profile_photo, post_id 
+                    FROM comments INNER JOIN users ON user_id = users.id;";
 
             $query = $this->pdo->prepare($sql);
 
@@ -308,7 +314,9 @@ class DB{
 
             if (count($comments) > 0) {
                 return $this->comments = $comments;
-            }
+            }else{
+                return $this->comments =  ['error' => $this->err_msg_auth('No <b>comments</b> available')];
+             }
             
 
         }       

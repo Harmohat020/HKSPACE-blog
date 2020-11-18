@@ -15,7 +15,6 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
     if(isset($_POST['delete'])){
         $overview->delete_post($_POST['post_id']);
 
-        header("Refresh:0");
     }
 }
 ?>

@@ -33,12 +33,12 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
     </div> 
     <hr>
     <?php
-    for ($i=0; $i < count($comments); $i++):  
-         print_r($comments[$i]['post_id']);echo '<br>';
-    endfor;
-    foreach ($posts as $post): 
-        $date = (explode(" ",$post['created_at'])); 
-            if($date[0] === date("Y-m-d")):  
+    if (array_key_exists('error', $posts)):
+        echo $posts['error'];
+    else:
+        foreach ($posts as $post): 
+            $date = (explode(" ",$post['created_at'])); 
+                if($date[0] === date("Y-m-d")):  
     ?>
     <div class="card">
         <div class="card-body">
@@ -69,8 +69,11 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
                                 <div class="clearfix"></div>
                                 <hr>
                                 <?php
-                                for ($i=0; $i < count($comments); $i++):  
-                                    if ($comments[$i]['post_id'] == $post['id']):
+                                if (array_key_exists('error', $comments)):
+                                    echo $comments['error'];
+                                else:
+                                    for ($i=0; $i < count($comments); $i++):  
+                                        if ($comments[$i]['post_id'] == $post['id']):
                                 ?>
                                 <ul class="media-list">
                                     <li class="media">
@@ -90,6 +93,7 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
                                 </ul>
                             <?php endif;?>
                             <?php endfor;?>
+                            <?php endif;?>
                             </div>
                         </div>
                     </div>
@@ -99,6 +103,7 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
     </div>
     <?php endif;?>
     <?php endforeach;?> 
+    <?php endif;?>
     <br>
 </main>
 

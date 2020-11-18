@@ -40,7 +40,6 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
     <div id="result"></div>
 
      
-
     <?php include "../../assets/requires/scripts.php";?>
     <script src="../../assets/js/nav/script.js"></script>
     <script>

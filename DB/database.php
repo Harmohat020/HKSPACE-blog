@@ -6,6 +6,7 @@ class DB{
     private $db;
     private $charset;
     private $pdo;
+    private $comments;
 
     public function __construct($host, $user, $pass, $db, $charset){
         $this->host = $host;
@@ -282,7 +283,7 @@ class DB{
             $rows = $query->fetchAll(PDO::FETCH_ASSOC);
 
             if (count($rows) > 0) {
-               $this->rows = $rows;
+               return $this->rows = $rows;
             }
 
         } 
@@ -306,8 +307,10 @@ class DB{
             $comments = $query->fetchAll(PDO::FETCH_ASSOC);
 
             if (count($comments) > 0) {
-                $this->comments = $comments;
+                return $this->comments = $comments;
             }
+            
+
         }       
         catch (PDOException $e) {
             /* Recognize mistake and roll back changes */

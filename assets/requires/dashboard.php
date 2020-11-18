@@ -10,19 +10,18 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
     header("Location: ../../auth/login.php");
     exit;
 }else{
-    $posts = new DB("localhost", "root", "", "hkspaceblog", "utf8mb4");
-    $posts->show_todays_posts();
+    $db = new DB("localhost", "root", "", "hkspaceblog", "utf8mb4");
 
-    $comments = new DB("localhost", "root", "", "hkspaceblog", "utf8mb4");
-    $comments->show_comments();
+    $posts = $db->show_todays_posts();
+
+    $comments = $db->show_comments();
 
     if (isset($_POST['form-comment'])) {
         if (empty($_POST['input-comment'])) {
             $form_err = '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'.'All fields are required!' .'</div>'; 
         }
         else{
-            $comment = new DB("localhost", "root", "", "hkspaceblog", "utf8mb4");
-            $comment->insert_comment($_POST['input-comment'], $_POST['form_post_id'], $user['ID']);
+            $comment = $db->insert_comment($_POST['input-comment'], $_POST['form_post_id'], $user['ID']);
         }
     }
 
@@ -34,7 +33,10 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
     </div> 
     <hr>
     <?php
-    foreach ($posts->rows as $post): 
+    for ($i=0; $i < count($comments); $i++):  
+         print_r($comments[$i]['post_id']);echo '<br>';
+    endfor;
+    foreach ($posts as $post): 
         $date = (explode(" ",$post['created_at'])); 
             if($date[0] === date("Y-m-d")):  
     ?>
@@ -67,21 +69,21 @@ if (!isset($_SESSION['username']) OR $user['type_id'] != 2) {
                                 <div class="clearfix"></div>
                                 <hr>
                                 <?php
-                                for ($i=0; $i < count($comments->comments); $i++):  
-                                    if ($comments->comments[$i]['post_id'] == $post['id']):
+                                for ($i=0; $i < count($comments); $i++):  
+                                    if ($comments[$i]['post_id'] == $post['id']):
                                 ?>
                                 <ul class="media-list">
                                     <li class="media">
                                         <a href="#" class="pull-left">
-                                            <img src="<?php echo $comments->comments[$i]['profile_photo']; ?>" alt="" class="img-circle">
+                                            <img src="<?php echo $comments[$i]['profile_photo']; ?>" alt="" class="img-circle">
                                         </a>
                                         <div class="media-body">
                                             <span class="text-muted pull-right">
-                                                <small class="text-muted"><?php echo $comments->comments[$i]['created_at']; ?></small>
+                                                <small class="text-muted"><?php echo $comments[$i]['created_at']; ?></small>
                                             </span>
-                                            <strong class="text-success"><?php echo $comments->comments[$i]['username']; ?></strong>
+                                            <strong class="text-success"><?php echo $comments[$i]['username']; ?></strong>
                                             <p>
-                                                <?php echo $comments->comments[$i]['comment']; ?>
+                                                <?php echo $comments[$i]['comment']; ?>
                                             </p>
                                         </div>
                                     </li>
